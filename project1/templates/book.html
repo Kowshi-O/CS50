@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %} {{bookInfo[0]["title"]}} {% endblock %}
+
+{% block body %}
+
+    <div class="div-center">
+        <br>
+        <h1 class="display-1"> {{bookInfo[0]["title"]}} </h1>
+        <img src="http://covers.openlibrary.org/b/isbn/{{bookInfo[0]['isbn']}}-M.jpg" width="150px">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card text-center bg-light" style="width: 100%; height: 200px;">
+                    <div class="card-header text-muted"><strong>{{bookInfo[0]["isbn"]}}</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{bookInfo[0]["title"]}} by {{bookInfo[0]["author"]}} </h5>
+                        <p class="card-text"> <strong>{{bookInfo[0]["title"]}}</strong> is a book written by <strong>{{bookInfo[0]["author"]}}</strong> in <strong>{{bookInfo[0]["year"]}}</strong>. <br>
+                            Read and submit reviews for <strong>{{bookInfo[0]["title"]}}</strong> below, or alternatively,<br> <a class="card-link" href="https://www.goodreads.com/search?q={{bookInfo[0]['title']}}"> View {{bookInfo[0]["title"]}} on Goodreads..</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card text-center bg-light" style="width: 100%; height: 200px;">
+                    <div class="card-header text-muted"><strong>Overview of Reviews</strong></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{bookInfo[0]["title"]}} by {{bookInfo[0]["author"]}} </h5>
+                        <p class="card-text"> <strong>Average Rating: </strong> {{bookInfo[1]["average_rating"]}}<br><strong>Total Ratings: </strong> {{bookInfo[1]["work_ratings_count"]}} <br>
+                            <a class="card-link" href="https://www.goodreads.com/search?q={{bookInfo[0]['title']}}"> View {{bookInfo[0]["title"]}} on Goodreads..</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <!-- SEPARATION INBETWEEN -->
+
+    <div class="alert alert-warning div-center review-heading" role="alert" width="60%">
+        <strong>Write a review...</strong>
+    </div>
+
+    <!-- REVIEW FORM -->
+    <div class="review-form-container">
+        <div class="review-form">
+            <form method="POST" >
+                <div>
+                    <label>Rate the book out of 5..</label>
+                    <select class="custom-select" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label>Write a review!</label>
+                    <textarea name="comment" style="padding: 20px 20px;" placeholder="Type a review..." class="form-control review-form-input" rows="3"></textarea>
+                </div>
+                <div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+<!-- Other user reviews -->
+
+<div class="alert alert-warning div-center review-heading" role="alert" width="60%">
+    <strong>Read other reviews..</strong>
+</div>
+<div class="user-reviews-container">
+    {% for review in reviews %}
+    <br>
+        <div class="card user-reviews">
+            <div class="card-header"> {{review["username"]}} says:</div>
+            <div class="card-body" style="text-align: left;">
+                <div style="text-align: left; font-size: 15px;">
+                    <strong>Comment:</strong>
+                </div>
+                <p class="lead">
+                    {{review["comment"]}}
+                </p>
+                <div style="text-align: left; font-size: 15px;">
+                    <strong>Rating: <p class="lead">{{review["rating"]}}</p> </strong>
+                </div>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+</div>
+
+{% endblock %}

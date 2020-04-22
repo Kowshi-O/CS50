@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block body %}
+    <div style="padding: 10px; margin: 10px;">
+        <h1 class="display-3" style="text-align: center;"> Search results for "{{justTheSearchQuery}}" </h1>
+    </div>
+    <div class="div-center">
+        {% for result in results %}
+            <div class="card border-primary" style="max-width: 18rem; margin: 10px;">
+                <div class="card-body text-secondary" style="text-align: center;">
+                    <h5 class="card-title text-dark"><strong>{{result["isbn"]}}</strong></h5>
+                    <p class="card-text"> <strong>{{result["title"]}}</strong>, written by <strong>{{result["author"]}}</strong> in <strong>{{result["year"]}}</strong></p>
+                </div>
+                <div class="card-footer" style="text-align: center;">
+                    <a href="/book/{{result['isbn']}}" style="text-decoration: none;">View Book</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

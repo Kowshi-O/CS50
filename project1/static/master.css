@@ -1,0 +1,113 @@
+body {
+    padding: 10px 15px;
+    background-color: #ccf7ff;
+    background-attachment: fixed;
+}
+
+.review-form {
+    padding: 20px 20px;
+    display: inline-block;
+    width: 750px;
+    border-style: solid;
+    border-color: #e3e3e3;
+    border-radius: 10px;
+    border-width: thick;
+}
+
+.review-form-container {
+  text-align: center;
+}
+
+.review-form-input {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.review-heading {
+    font-size: 20px;
+}
+
+.user-reviews-container {
+    text-align: center;
+}
+
+.user-reviews {
+    width: 80%;
+    display: inline-block;
+}
+
+.login-input {
+    width: 260px;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+
+}
+.error-div {
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
+}
+
+.login-input:focus {
+    background-color: #f2f2f2;
+    outline: none;
+}
+
+.login-box {
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
+}
+
+.search-box {
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
+}
+
+.div-center {
+    display: block;
+    text-align: center;
+}
+
+
+.search-input {
+    width: 700px;
+    height: 50px;
+    padding: 6px 11px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 17px;
+
+}
+
+.search-input:focus {
+    background-color: #f7f7f7;
+    outline: none;
+}
+
+.card {
+    display:inline-block;
+}
+
+.register-box {
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
+
+}
+
+.right {
+    float: right;
+}
+
+.navbar-logo {
+    filter: drop-shadow(8px 8px 10px gray);
+}

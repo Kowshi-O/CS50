@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %} Search{% endblock %}
+
+{% block body %}
+    <form action="/search" method="get">
+        <div class="search-box">
+            <h1>Search..</h1>
+            <small class="small text-center text-muted">A maximum of 100 results are returned per search.</small>
+            <br> <br>
+            <input type="text" autocomplete="off" autofocus="off" class="search-input" name="bookQuery" placeholder="ISBN, Author or Title">
+        </div>
+    </form>
+
+<p class="text-center text-muted"> Example: 0316015849, Twilight, or Stephenie Meyer</p>
+{% endblock %}

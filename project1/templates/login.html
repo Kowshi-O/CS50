@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Login {% endblock %}
+
+{% block body %}
+<div class="login-box">
+    <h1>Login</h1>
+    <p class="text-center text-muted"> Don't have an account? <a style="text-decoration: none;" href="/register">Sign up instead...</a> </p>
+    <form action="/login" method="post">
+        <input type="text" autocomplete="off" class="login-input" name="username" placeholder="Username.."> <br>
+        <br>
+        <input type="password" autocomplete="off" class="login-input" name="password" placeholder="Password..">
+        <br><br>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+</div>
+{% endblock %}
